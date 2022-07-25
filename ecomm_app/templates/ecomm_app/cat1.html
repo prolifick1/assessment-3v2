@@ -1,0 +1,16 @@
+{% extends 'ecomm_app/layout.html' %}
+{% load static %}
+
+{% for message in messages %}
+    
+    <div class="alert alert-success">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+           {{ message }}
+    </div>
+
+{% endfor %}
+
+{% block main %}
+{% include 'ecomm_app/product-component.html' %}
+{% endblock main %}
+

@@ -1,0 +1,9 @@
+{% extends 'ecomm_app/layout.html' %}
+{% load static %}
+{% block main %}
+{% if data %}
+{% include 'ecomm_app/product-component.html' %}
+{% else %}
+<h1>There are no products?</h1>
+{% endif %}
+{% endblock %}

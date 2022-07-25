@@ -1,0 +1,31 @@
+{% extends 'ecomm_app/layout.html' %}
+<h1>SHOPPING CART</h1>
+
+{% block main %}
+  {% if user_cart %}
+    {% for item in user_cart %}
+
+    <li>
+      <div class="d-flex flex-row space-around justify-content-between">
+        <div class="w-20">{{ item.quantity }}</div>
+        <div class="w-50">{{item.itemName }}</div>
+        <div class="w-10">{{ item.price }}</div>
+        <div class="w-10">{{ item.subtotal }}</div>
+
+      </div>
+
+    </li>
+    {% endfor %}
+    <div class="d-flex justify-content-end">
+      <div>
+        Total: ${{ cart_total }}
+      </div>
+    </div>
+  {% else %}
+  Nothing here
+  {% endif %}
+ <div>
+  <button onclick="history.back()">Keep Shopping</button>
+ </div>
+{% endblock %}
+

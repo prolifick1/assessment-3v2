@@ -1,0 +1,36 @@
+{% load static %}
+<ul id="list-container" class="list-group list-group items-list">
+  {% for product in data %}
+    <div class="d-flex flex-row">
+      <li class="list-group-item p-2">
+        <img src="{% static 'media/' %}{{product.filename}}" /> 
+      </li>
+      <div class="d-flex flex-column p-5 flex-fill item-info">
+        <h2>{{product.name}}</h2>
+        <h1 class='item-price'>{{ product.price }}</h1>
+        <p>{{ product.description }}</p>
+        <div class="btn-group">
+          <button  type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Qty: 1
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">2</a>
+            <a class="dropdown-item" href="#">3</a>
+            <a class="dropdown-item" href="#">4</a>
+            <a class="dropdown-item" href="#">5</a>
+            <a class="dropdown-item" href="#">6</a>
+            <a class="dropdown-item" href="#">7</a>
+            <a class="dropdown-item" href="#">8</a>
+            <a class="dropdown-item" href="#">9</a>
+          </div>
+        </div>      
+      </div>
+      <button onClick="{addToCart();}" class="ml-auto btn btn-warning p-2 btn-cart">
+        Add to Cart
+      </button>
+    </div>
+    <hr>
+  {% endfor %}
+</ul>
+
